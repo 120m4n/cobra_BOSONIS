@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  h1 {
+    background: #017eff;
+    color: #fff;
+    margin: 0;
+    padding: 0.5em;
+    font-size: 1.5em;
+  }
+  
+  h1 a {
+    text-decoration: none;
+    color: currentColor;
+  }
+  
+  #map {
+    width: 600px;
+    height: 400px;
+  }
+  
+  .info {
+    background: #eee;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    color: #666;
+  }
+  .info p {
+    margin: 0;
+  }
+  .info ul {
+    margin: 0;
+  }
+  

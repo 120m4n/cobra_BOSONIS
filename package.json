@@ -1,0 +1,23 @@
+{
+  "name": "ol_parcel_ol-ext",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "css": "^3.0.0",
+    "o": "^2.3.2",
+    "ol": "^6.5.0",
+    "ol-ext": "^3.1.17"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "keywords": []
+}

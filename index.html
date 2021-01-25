@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="src/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="src/css/form_styles.css" type="text/css">
+    <link rel="stylesheet" href="src/css/ol3-sidebar.css" type="text/css">
+</head>
+<body>
+
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Nav tabs -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#home" role="tab"><i class="fa fa-filter"></i></a></li>
+                <li><a href="#profile" role="tab"><i class="fa fa-globe"></i></a></li>
+                <li class="disabled"><a href="#messages" role="tab"><i class="fa fa-envelope"></i></a></li>
+                <!-- <li><a href="https://github.com/Turbo87/sidebar-v2" role="tab" target="_blank"><i class="fa fa-github"></i></a></li> -->
+            </ul>
+
+            <ul role="tablist">
+                <li><a href="#settings" role="tab"><i class="fa fa-gear"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- Tab panes -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="home">
+                <h1 class="sidebar-header">
+                    Filtros
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <div class="container-form">
+                    <div class="custom-field_sub"> 
+                        <h1><span> Subestacion </span> </h1>
+                     
+                            <div>
+                                <label for="framework">Nombre: </label>
+                                <select id="framework" multiple="multiple" ></select>
+                            </div>
+                
+                    </div> 
+                    <div class="custom-field_sub">
+                        <h1><span> Capa base </span> </h1>                     
+                            <div>
+                                <div>
+                                    <label for="element_features_redes"> Redes</label> 
+                                    <input class="element_radio" type="radio" name="element_features"  id ="element_features_redes" value=1 checked>
+                                </div>
+                                <div>
+                                    <label for="element_features_trafo"> Transformadores</label> 
+                                    <input class="element_radio" type="radio" name="element_features"  id ="element_features_trafo" value=0> 
+                                </div>
+                            </div>                   
+                    </div>
+                    
+                    <div class="custom-field_sub"> 
+                        <h1><span> Nivel Tension </span> </h1>                     
+                        <div>
+                            <div>
+                                <label for="nivel_tension_2"> Nivel 2</label> 
+                                <input class="nvl_Checkbox" type="checkbox" name="nivel_tension_2"  id ="nivel_tension_2" value=2>
+                            </div>
+                            <div>   
+                                <label for="nivel_tension_3"> Nivel 3</label>  
+                                <input class="nvl_Checkbox" type="checkbox" name="nivel_tension_3" id ="nivel_tension_3" value=3>
+                            </div>
+                            <div>
+                                <label for="nivel_tension_4"> Nivel 4</label>  
+                                <input class="nvl_Checkbox" type="checkbox" name="nivel_tension_4" id ="nivel_tension_4" value=4> 
+                            </div>
+                        </div> 
+                    </div> 
+                    <div class="custom-field_sub">
+                        <h1><span> Ubicacion </span> </h1>   
+                        <div>
+                            <div>
+                                <label for="ubic_urbano"> Urbano</label> 
+                                <input class="ubic_Checkbox" type="checkbox" name="ubic_urbano" id="ubic_urbano" value=1> 
+                            </div>
+                            <div>
+                                <label for="ubic_rural">Rural</label> 
+                                <input class="ubic_Checkbox" type="checkbox" name="ubic_rural" id="ubic_rural" value=2> 
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="custom-field_sub"> 
+                        <h1><span> Tipo Red </span> </h1>
+                        <div>
+                            <div>   
+                                <label for="tipo_red_aereo">Aereo</label>  
+                                <input class="tipo_red_Checkbox" type="checkbox" name="tipo_red_aereo" id="tipo_red_aereo" value=1>
+                            </div>
+                            <div>
+                                <label for="tipo_red_sub">Subterraneo</label>  
+                                <input class="tipo_red_Checkbox" type="checkbox" name="tipo_red_sub" id="tipo_red_sub" value=2>  
+                            </div>
+                        </div> 
+                    </div> 
+                    <div class="custom-field_prop">
+                        <div>
+                            <label for="properties_Checkbox">Propiedades</label> 
+                            <input class="properties_Checkbox" type="checkbox" name="properties_Checkbox" id="properties_Checkbox" value=1> 
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <p><button id='refreshbutton'>Filtrar</button></p>
+                        <p><button id='cleanbutton'>Limpiar</button></p>
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="sidebar-pane" id="profile">
+                <h1 class="sidebar-header">EnerGis 360<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                <div class="custom-field_sub">
+                    <h1><span> Visor 360 </span> </h1>                     
+                        <div>
+                            <div>
+                                <label for="viewer_360"> Activar</label> 
+                                <input class="element_radio" type="checkbox" name="viewer_360"  id ="viewer_360" >
+                            </div>
+                        </div>                   
+                </div>
+            </div>
+
+            <div class="sidebar-pane" id="messages">
+                <h1 class="sidebar-header">Messages<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            </div>
+
+            <div class="sidebar-pane" id="settings">
+                <h1 class="sidebar-header">Settings<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            </div>
+        </div>
+    </div>
+    <div class="info"></div>
+
+    <div id="map" class="sidebar-map"></div>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/build/ol.js"></script>
+    <script src="src/ol3-sidebar.js"></script>
+    <script src="src/index.js"></script>
+    
+</body>
+</html>

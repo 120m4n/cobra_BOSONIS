@@ -1,0 +1,432 @@
+
+input#nivel_tension_2.nvl_Checkbox,
+input#nivel_tension_3.nvl_Checkbox,
+input#nivel_tension_4.nvl_Checkbox {
+    height: 17px;
+    width: 17px;
+}
+
+input#tipo_red_aereo.tipo_red_Checkbox,
+input#tipo_red_sub.tipo_red_Checkbox {
+    height: 17px;
+    width: 17px;
+}
+
+input#ubic_urbano.ubic_Checkbox,
+input#ubic_rural.ubic_Checkbox {
+    height: 17px;
+    width: 17px;
+}
+
+.filtros{
+    /* background-color:rgba(173, 201, 14, 0.5); */
+    font-family: 'neutroextra_bold';
+    font-size: 1.5rem;
+    /* border: 1px solid black; */
+    text-align: center;
+    /* border-radius: 3px; */
+}
+
+.filtros p{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Defining a custom border on all 
+sides except the top side */ 
+.custom-field_nvl { 
+    border: 1px solid rgba(121, 113, 113, 0.81);
+    border-top: none; 
+    margin: 16px 2px 0px 2px;
+    padding: 8px; 
+    background-color:aliceblue;
+    border-radius: 2px;
+} 
+
+/* Defining the style of the  
+heading/legend for custom fieldset */ 
+.custom-field_nvl h1 { 
+    font: 16px normal; 
+    margin: -16px -8px 0; 
+} 
+
+/* Using float:left allows us to mimic 
+    the legend like fieldset. The  
+    float:right property can also be  
+    used to show the legend on right side */ 
+
+.custom-field_nvl h1 span { 
+    float: left; 
+} 
+
+/* Creating the custom top border to make 
+    it look like fieldset defining small  
+    border before the legend. The width  
+    can be modified to change position  
+    of the legend */ 
+.custom-field_nvl h1:before { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81);
+    content: ' '; 
+    float: left; 
+    margin: 8px 2px 0 -1px; 
+    width: 12px; 
+} 
+
+/* Defining a long border after the  
+legend, using overflow hidden to  
+actually hide the line behind the  
+legend text. It can be removed 
+for a different effect */ 
+.custom-field_nvl h1:after { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81); 
+    content: ' '; 
+    display: block; 
+    height: 24px; 
+    left: 2px; 
+    margin: 0 1px 0 0; 
+    overflow: hidden; 
+    position: relative; 
+    top: 8px; 
+} 
+
+.custom-field_nvl>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color:aliceblue;
+    
+}
+
+/* filtro tipo_red */
+
+
+/* Defining a custom border on all 
+sides except the top side */ 
+.custom-field_tp { 
+    border: 1px solid rgba(121, 113, 113, 0.81);
+    border-top: none; 
+    margin: 16px 2px 0px 2px;
+    padding: 8px; 
+    background-color:aliceblue;
+    border-radius: 2px;
+} 
+
+/* Defining the style of the  
+heading/legend for custom fieldset */ 
+.custom-field_tp h1 { 
+    font: 16px normal; 
+    margin: -16px -8px 0; 
+} 
+
+/* Using float:left allows us to mimic 
+    the legend like fieldset. The  
+    float:right property can also be  
+    used to show the legend on right side */ 
+
+.custom-field_tp h1 span { 
+    float: left; 
+} 
+
+/* Creating the custom top border to make 
+    it look like fieldset defining small  
+    border before the legend. The width  
+    can be modified to change position  
+    of the legend */ 
+.custom-field_tp h1:before { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81); 
+    content: ' '; 
+    float: left; 
+    margin: 8px 2px 0 -1px; 
+    width: 12px; 
+} 
+
+/* Defining a long border after the  
+legend, using overflow hidden to  
+actually hide the line behind the  
+legend text. It can be removed 
+for a different effect */ 
+.custom-field_tp h1:after { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81); 
+    content: ' '; 
+    display: block; 
+    height: 24px; 
+    left: 2px; 
+    margin: 0 1px 0 0; 
+    overflow: hidden; 
+    position: relative; 
+    top: 8px; 
+} 
+
+.custom-field_tp>div {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color:aliceblue;
+    
+}
+
+
+
+
+
+/* Filtro Subestacion */
+
+/* Defining a custom border on all 
+sides except the top side */ 
+.custom-field_sub { 
+    border: 1px solid rgba(121, 113, 113, 0.81); 
+    border-top: none; 
+    margin: 16px 2px 16px 2px;
+    padding: 8px; 
+    background-color:aliceblue;
+    border-radius: 2px;
+} 
+
+/* Defining the style of the  
+heading/legend for custom fieldset */ 
+.custom-field_sub h1 { 
+    font: 16px normal; 
+    margin: -16px -8px 0; 
+} 
+
+/* Using float:left allows us to mimic 
+    the legend like fieldset. The  
+    float:right property can also be  
+    used to show the legend on right side */ 
+
+.custom-field_sub h1 span { 
+    float: left; 
+} 
+
+/* Creating the custom top border to make 
+    it look like fieldset defining small  
+    border before the legend. The width  
+    can be modified to change position  
+    of the legend */ 
+.custom-field_sub h1:before { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81);
+    content: ' '; 
+    float: left; 
+    margin: 8px 2px 0 -1px; 
+    width: 12px; 
+} 
+
+/* Defining a long border after the  
+legend, using overflow hidden to  
+actually hide the line behind the  
+legend text. It can be removed 
+for a different effect */ 
+.custom-field_sub h1:after { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81);
+    content: ' '; 
+    display: block; 
+    height: 24px; 
+    left: 2px; 
+    margin: 0 1px 0 0; 
+    overflow: hidden; 
+    position: relative; 
+    top: 8px; 
+} 
+
+.custom-field_sub>div {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color:aliceblue;
+    
+}
+
+
+
+/* freatures redes y transformadores custom-field_element*/
+
+/* Defining a custom border on all 
+sides except the top side */ 
+.custom-field_element { 
+    border: 1px solid rgba(121, 113, 113, 0.81); 
+    border-top: none; 
+    margin: 16px 2px 0px 2px;
+    padding: 8px; 
+    background-color:aliceblue;
+    border-radius: 2px;
+} 
+
+.custom-field_element > div{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Defining the style of the  
+heading/legend for custom fieldset */ 
+.custom-field_element h1 { 
+    font: 16px normal; 
+    margin: -16px -8px 0; 
+} 
+
+/* Using float:left allows us to mimic 
+    the legend like fieldset. The  
+    float:right property can also be  
+    used to show the legend on right side */ 
+
+.custom-field_element h1 span { 
+    float: left; 
+} 
+
+/* Creating the custom top border to make 
+    it look like fieldset defining small  
+    border before the legend. The width  
+    can be modified to change position  
+    of the legend */ 
+.custom-field_element h1:before { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81);
+    content: ' '; 
+    float: left; 
+    margin: 8px 2px 0 -1px; 
+    width: 12px; 
+} 
+
+/* Defining a long border after the  
+legend, using overflow hidden to  
+actually hide the line behind the  
+legend text. It can be removed 
+for a different effect */ 
+.custom-field_element h1:after { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81);
+    content: ' '; 
+    display: block; 
+    height: 24px; 
+    left: 2px; 
+    margin: 0 1px 0 0; 
+    overflow: hidden; 
+    position: relative; 
+    top: 8px; 
+} 
+
+.custom-field_element>div {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color:aliceblue;
+    
+}
+
+/* fin redes y transformadores custom-field_element*/
+
+
+/* Inicio filtro por ubicacion field_ubic*/
+
+/* Defining a custom border on all 
+sides except the top side */ 
+.custom-field_ubic { 
+    border: 1px solid rgba(121, 113, 113, 0.81); 
+    border-top: none; 
+    margin: 16px 2px 0px 2px;
+    padding: 8px; 
+    background-color:aliceblue;
+    border-radius: 2px;
+} 
+
+.custom-field_ubic > div{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Defining the style of the  
+heading/legend for custom fieldset */ 
+.custom-field_ubic h1 { 
+    font: 16px normal; 
+    margin: -16px -8px 0; 
+} 
+
+/* Using float:left allows us to mimic 
+    the legend like fieldset. The  
+    float:right property can also be  
+    used to show the legend on right side */ 
+
+.custom-field_ubic h1 span { 
+    float: left; 
+} 
+
+/* Creating the custom top border to make 
+    it look like fieldset defining small  
+    border before the legend. The width  
+    can be modified to change position  
+    of the legend */ 
+.custom-field_ubic h1:before { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81);
+    content: ' '; 
+    float: left; 
+    margin: 8px 2px 0 -1px; 
+    width: 12px; 
+} 
+
+/* Defining a long border after the  
+legend, using overflow hidden to  
+actually hide the line behind the  
+legend text. It can be removed 
+for a different effect */ 
+.custom-field_ubic h1:after { 
+    border-top: 1px solid rgba(121, 113, 113, 0.81);
+    content: ' '; 
+    display: block; 
+    height: 24px; 
+    left: 2px; 
+    margin: 0 1px 0 0; 
+    overflow: hidden; 
+    position: relative; 
+    top: 8px; 
+} 
+
+.custom-field_ubic>div {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color:aliceblue;
+    
+}
+/* Fin filtro por ubicacion */
+.btn-group{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/* contenerdor principal */
+.container-form{
+    border: 1px solid; 
+    /* border-top: none;  */
+    /* margin: 0px 2px 32px 2px;  */
+    padding: 8px; 
+    background-color:#dbe0e6;
+    border-radius: 5px;
+}
+
+
+
+/* boton propiedades */
+
+/* .custom-field_prop{ 
+    border: 1px solid rgba(121, 113, 113, 0.81); 
+    border-top: none; 
+    margin: 16px 2px 0px 2px;
+    padding: 8px; 
+    background-color:aliceblue;
+    border-radius: 2px;
+}  */
+
+.custom-field_prop>div {
+    margin: 20px 0;
+    padding: 8px;
+    width: 40%;
+    border: 1px solid rgba(121, 113, 113, 0.81); 
+
+
+    background-color:aliceblue;
+    
+}
