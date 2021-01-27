@@ -5,6 +5,10 @@ import "ol-ext/dist/ol-ext.css";
 // import "./options";
 import "./fetch-API";
 
+import {clientMQTT, conectarServerMQTT, enviarMensajeMQTT}  from "./mqtt-client";
+
+
+
 // Add a map
 import map from "./map";
 
@@ -36,6 +40,7 @@ map.addControl(new MousePosition({
 
 //Variables for
 const viewer_360_check = document.getElementById('viewer_360');
+var w;
 
 
 // Pulse feature at coord
@@ -67,13 +72,29 @@ function pulseFeature(coord){
         .then(response => response.json())
         .then (text => {
           const pole = text[0];
-          if (pole['codigoapoyo'] != -1 ){
-              // let pole_text = `apoyo: ${pole['codigoapoyo']} ---- ubicacion: ${pole['ubicacion']}`;
-              
+          if (pole['codigoapoyo'] != -1 ){             
               let ubicacion_lonlat = (pole['ubicacion']).match(/\((.*)\)/).pop();
               ubicacion_lonlat = ubicacion_lonlat.split(' ');
               // console.log(ubicacion_lonlat)
               // console.log( fromLonLat([parseFloat(ubicacion_lonlat[0]), parseFloat(ubicacion_lonlat[1])]) )
+              // let openViewer = sessionStorage.getItem('openViewer');
+              // if (openViewer) {
+              //   console.log('Mensajeria MQTT')
+              // } else{
+              const viewer_url = `http://190.144.13.70:6010/Energis360Consulta/index.jsp?codigoElemento=${pole['codigoapoyo']}&PCO=37&PC=29&sala=TEMP`
+              //   window.open(viewer_url,"Visor360");
+              //   sessionStorage.setItem('openViewer', true);
+              // }
+              
+              if (!w || w.closed) {
+                w = window.open(viewer_url,"_blank","menubar=0,scrollbars=0");
+                conectarServerMQTT();
+              } else {
+                // console.log('window is already opened');
+                enviarMensajeMQTT(`{"CodigoApoyo":"${pole['codigoapoyo']}"}`,'Energis/TEMP')
+              }
+              w.focus();
+
               let zoom = map.getView().zoom;
               map.getView().animate({zoom: zoom}, {center: fromLonLat([parseFloat(ubicacion_lonlat[0]), parseFloat(ubicacion_lonlat[1])])});
           }
@@ -84,6 +105,7 @@ function pulseFeature(coord){
     }
     
   });
+
 
 
 

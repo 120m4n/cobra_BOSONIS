@@ -5,6 +5,15 @@ import OSM from "ol/source/OSM";
 import {fromLonLat} from 'ol/proj';
 import Attribution from 'ol/control/Attribution';
 import {defaults} from 'ol/control';
+import {Group as LayerGroup} from 'ol/layer';
+
+import {vtramomt, vapoyo, vtrafos} from './layers';
+
+
+const vectorOverlays = new LayerGroup({
+  title: 'Detalles',
+  layers: [vtrafos ]
+})
 
 
 const attribution = new Attribution({
@@ -17,12 +26,17 @@ const map = new Map({
   controls: defaults({attribution:false}).extend([ attribution]),
   view: new View({
     center:fromLonLat([-74.5315,10.9993]), //coordinates the map will center on initially
+    maxZoom: 20,
     zoom: 10
   }),
   layers: [
     new Tile({
+      title: 'OSM',
+      type: 'base',
+      visible: true,
       source: new OSM()
-    })
+    }), 
+    vectorOverlays
   ]
 });
 
